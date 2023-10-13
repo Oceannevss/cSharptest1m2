@@ -58,7 +58,6 @@ public class Program
                 if (lettre.Equals(c))
                 {
                     num += alphabet.IndexOf(c);
-                    Console.WriteLine(alphabet.IndexOf(c));
                 }
             }
         }
@@ -68,7 +67,7 @@ public class Program
 
     public static void AlgoTest(Func<string, string> func)
     {
-        if (func("AB") == "01")
+        if (func("ab") == "01")
         {
             Console.WriteLine("Success");
         }
