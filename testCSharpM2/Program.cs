@@ -6,36 +6,36 @@ public class Program
     public static void Main()
     {
         //Exercice 2
-        //string text;
-        //Console.WriteLine("input :");
-        //text = Console.ReadLine();
-        //Console.WriteLine(ConvertToUpper(text));
+        string text;
+        Console.WriteLine("input :");
+        text = Console.ReadLine();
+        Console.WriteLine(ConvertToUpper(text));
 
-        ////Exercice 3
-        //Console.Write("Entrez un nombre: ");
-        //if (int.TryParse(Console.ReadLine(), out int number))
-        //{
-        //    if(number%2 == 0)
-        //    {
-        //        Console.WriteLine(number + " est un nombre pair");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine(number + "est un nombre impair");
-        //    }
-        //}
-        //else
-        //{
-        //    Console.WriteLine("Veuillez entrer un nombre entier valide.");
-        //}
+        //Exercice 3
+        Console.Write("Entrez un nombre: ");
+        if (int.TryParse(Console.ReadLine(), out int number))
+        {
+            if (number % 2 == 0)
+            {
+                Console.WriteLine(number + " est un nombre pair");
+            }
+            else
+            {
+                Console.WriteLine(number + "est un nombre impair");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Veuillez entrer un nombre entier valide.");
+        }
 
-        ////Exercice 4 
-        //string mot;
-        //Console.WriteLine("entrez un nom");
-        //mot = Console.ReadLine();
-        //Console.WriteLine(MyNameIs(mot));
-        //AlgoTest(MyNameIs);
-        //Console.ReadLine();
+        //Exercice 4 
+        string mot;
+        Console.WriteLine("entrez un nom");
+        mot = Console.ReadLine();
+        Console.WriteLine(MyNameIs(mot));
+        AlgoTest(MyNameIs);
+        Console.ReadLine();
 
         //Algo
         List<int> ints = new List<int> { 1, 2, 3, 5, 2, 2, 1, 5 };
