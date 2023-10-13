@@ -52,15 +52,15 @@ public class Program
         string num = "";
         for (int i = 0; i < name.Length; i++)
         {
-            char index = name.ElementAt(i);
-            System.Console.Write(alphabet[index]);  
-            //foreach(char c in alphabet)
-            //{
-            //    if (index == c)
-            //    {
-            //        num += alphabet.IndexOf(c);
-            //    }
-            //}
+            char lettre = name.ElementAt(i);
+            foreach (char c in alphabet)
+            {
+                if (lettre.Equals(c))
+                {
+                    num += alphabet.IndexOf(c);
+                    Console.WriteLine(alphabet.IndexOf(c));
+                }
+            }
         }
 
         return num;
