@@ -38,7 +38,7 @@ public class Program
         //Console.ReadLine();
 
         //Algo
-        List<int> ints = new List<int> { 1, 2, 3, 5, 5, 2, 1, 5 };
+        List<int> ints = new List<int> { 1, 2, 3, 5, 2, 2, 1, 5 };
         Console.WriteLine(MostAppear(ints));
 
     }
@@ -99,18 +99,21 @@ public class Program
             }
 
         }
-        
-        foreach(int i in occurences.Keys)
+        foreach (KeyValuePair<int, int> occ in occurences)
         {
-            foreach (int j in occurences.Values)
+            Console.WriteLine("Clé: {0}, Valeur: {1}",
+                occ.Key, occ.Value);
+        }
+
+        foreach( var occ in occurences)
+        {
+            if (occ.Value >= max)
             {
-                if (j >= max)
-                {
-                    max = j;
-                    result = occurences[i];
-                }
+                max = occ.Value;
+                result = occ.Key;
             }
         }
-            return result;
+        return result;
+    
     }
 }
