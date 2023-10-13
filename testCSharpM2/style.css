@@ -1,0 +1,7 @@
+﻿.color-sample {
+    display: block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background-color: #900;
+}
