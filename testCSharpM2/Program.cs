@@ -1,10 +1,34 @@
 ﻿using System;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
+using System.Xml.Linq;
 
 public class Program
 {
     public static void Main()
     {
+        var smtp = new SmtpClient
+        {
+            Host = "smtp.gmail.com",
+            Port = 587,
+            EnableSsl = true,
+            DeliveryMethod = SmtpDeliveryMethod.Network,
+            UseDefaultCredentials = false,
+            Credentials = new NetworkCredential("opandore@d-edge.com", "Ocededgegg")
+        };
+        using (var message = new MailMessage("opandore@d-edge.com", "belle971vitry@hotmail.com")
+        {
+            Subject = "subject test",
+            Body = "body test"
+        })
+
+        {
+            //ms.Position = 0;
+            //message.Attachments.Add(attach);
+            smtp.Send(message);
+        }
+
         //Exercice 2
         string text;
         Console.WriteLine("input :");
@@ -40,6 +64,38 @@ public class Program
         //Algo
         List<int> ints = new List<int> { 1, 2, 3, 5, 2, 2, 1, 5 };
         Console.WriteLine(MostAppear(ints));
+
+    }
+
+    public static int ComputeClosestToZero(int[] ts)
+    {
+        // Write your code here
+        // To debug: Console.Error.WriteLine("Debug messages...");
+        int[] tabPos = new int[] {};
+        int[] tabneg = new int[] {};
+
+        foreach ( int temps in ts )
+        {
+            if ( temps >= 0)
+            {
+                tabPos.Append(temps);
+            }else
+            {
+                tabneg.Append(temps);
+            }
+        }
+
+        var t1 = tabPos.Min();
+        var t2 = tabneg.Max();
+
+        if (t1 > t2 )
+        {
+            return t1;
+
+        }else
+        {
+            return t2;
+        }
 
     }
 
@@ -91,7 +147,7 @@ public class Program
         {
             if (occurences.ContainsKey(i))
             {
-                occurences[i] = occurences.GetValueOrDefault(i)+1;
+                occurences[i] = occurences.GetValueOrDefault(i) + 1;
             }
             else
             {
@@ -105,7 +161,7 @@ public class Program
                 occ.Key, occ.Value);
         }
 
-        foreach( var occ in occurences)
+        foreach (var occ in occurences)
         {
             if (occ.Value >= max)
             {
@@ -114,6 +170,6 @@ public class Program
             }
         }
         return result;
-    
+
     }
 }
